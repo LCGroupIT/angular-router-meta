@@ -1,18 +1,18 @@
 {
     "name": "angular-router-meta",
-    "version": "1.0.1",
+    "version": "0.0.0",
     "ngPackage": {
         "lib": {
             "entryFile": "src/index.ts"
         }
     },
     "author": {
-        "name": "Sergey Romanchuk"
+        "name": "Alexander Semenov"
     },
     "maintainers": [
         {
-            "email": "rezety@gmail.com",
-            "name": "Sergey Romanchuk"
+            "email": "alex.semenov.web@mail.ru",
+            "name": "Alexander Semenov"
         }
     ],
     "homepage": "https://github.com/LCGroupIT/angular-router-meta#readme",

@@ -1,5 +1,5 @@
 import { RouterTestingModule } from "@angular/router/testing";
-import { async, inject, TestBed, tick, fakeAsync } from '@angular/core/testing';
+import { async, inject, TestBed } from '@angular/core/testing';
 
 import { RouterMetaModule, RouterMetaService } from '../src';
 import { Router } from '@angular/router';
@@ -11,16 +11,7 @@ import {
     HomeComponent
 } from "./helpers";
 
-function basePromise(): Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-        document.addEventListener('DOMContentLoaded', function (e) {
-            resolve(true);
-        });
-    })
-}
-
-
-describe('HomeComponent', () => {
+describe('AppComponent', () => {
     let testBedService: RouterMetaService;
     let meta: Meta;
     let location: Location;
@@ -62,7 +53,7 @@ describe('HomeComponent', () => {
         });
     }));
 
-    it('navigation to the route with data.meta should set meta tag', async(() => {
+    it('should set meta tag', async(() => {
         meta = TestBed.get(Meta);
         router = TestBed.get(Router);
         router.navigate(['']).then(() => {
@@ -74,7 +65,7 @@ describe('HomeComponent', () => {
         });
     }));
 
-    it('navigation to the route with the same name of data.meta changes content value', async(() => {
+    it('should change content value', async(() => {
         meta = TestBed.get(Meta);
         router = TestBed.get(Router);
         router.navigate(['']);
@@ -88,7 +79,7 @@ describe('HomeComponent', () => {
 
     }));
 
-    it('navigation to the route with different name of data.meta replaces previous with the new one', async(() => {
+    it('should delete old tag and add new one', async(() => {
         meta = TestBed.get(Meta);
         router = TestBed.get(Router);
         router.navigate(['']);
@@ -103,7 +94,7 @@ describe('HomeComponent', () => {
         });
     }));
 
-    it('navigation to the route with several meta defined sets several meta tags', async(() => {
+    it('should define several meta tags', async(() => {
         meta = TestBed.get(Meta);
         router = TestBed.get(Router);
         router.navigate(['']);
@@ -122,7 +113,7 @@ describe('HomeComponent', () => {
         });
     }));
 
-    it('navigation to the route without meta removes previous', async(() => {
+    it('should delete meta tag', async(() => {
         meta = TestBed.get(Meta);
         router = TestBed.get(Router);
         router.navigate(['']);

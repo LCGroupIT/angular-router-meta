@@ -30,7 +30,7 @@
         "url": "https://github.com/LCGroupIT/angular-router-meta/issues"
     },
     "license": "MIT",
-    "description": "Angular 4+ meta helper",
+    "description": "Angular v4+ meta helper",
     "engines": {
         "node": "8.9.3"
     },

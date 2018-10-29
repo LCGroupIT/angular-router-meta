@@ -6,10 +6,11 @@ Angular v4+ meta helper.
 This package is a powerful instrument in seo setting. -->
 
 
- - [Installation](##installation)
- - [Usage](##usage)
+- [Installation](##installation)
+- [Usage](##usage)
+- [Result](##result)
 
- ## Installation
+## Installation
 
 ### 1. Install the package
 ```bash
@@ -33,7 +34,7 @@ Add imported module to the *imports* section in NgModule decorator
   ]
 })
 ```
-**NOTE:** the *forRoot()* method isn't optional. The module won't work if you do not call this method
+**NOTE:** *forRoot()* method isn't optional. The module won't work if you do not call this method
 
 ### 3. Inject service in AppComponent constructor
 
@@ -68,12 +69,22 @@ export const appRoutes: Routes = [
                 name: 'my_name',
                 content: 'the_name',
                 charset: 'utf-8',
-                property: 'some_property',
-                ...
+                property: 'some_property'
+            },
+            {
+                name: 'render:status_code',
+                content: '200'
             }
         ]
     }
   }
 ];
+```
+
+## Result
+These settings in *appRoutes* constant will render the following code in *head* tag:
+```html
+<meta name="my_name" content="the_name" charset="utf-8" property="some_property" angular-router-meta>
+<meta name="render:status_code" content="200" angular-router-meta>
 ```
 

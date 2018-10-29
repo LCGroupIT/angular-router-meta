@@ -1,9 +1,5 @@
 import { Routes } from "@angular/router";
 import { HomeComponent } from "./home.component";
-import { NoMetaComponent } from "./no-meta.component";
-import { ChangeMetaComponent } from "./change-meta.component";
-import { ReplaceMetaComponent } from "./replace-meta.component";
-import { SeveralMetaComponent } from "./several-meta.component";
 
 export const routes: Routes = [
     {
@@ -15,9 +11,9 @@ export const routes: Routes = [
             }]
         }
     },
-    { path: 'nometa', component: NoMetaComponent },
+    { path: 'nometa', component: HomeComponent },
     {
-        path: 'changemeta', component: ChangeMetaComponent,
+        path: 'changemeta', component: HomeComponent,
         data: {
             meta: [{
                 name: 'render:status_code',
@@ -26,7 +22,7 @@ export const routes: Routes = [
         }
     },
     {
-        path: 'replacemeta', component: ReplaceMetaComponent,
+        path: 'replacemeta', component: HomeComponent,
         data: {
             meta: [{
                 name: 'test:replace',
@@ -35,7 +31,7 @@ export const routes: Routes = [
         }
     },
     {
-        path: 'severalmeta', component: SeveralMetaComponent,
+        path: 'severalmeta', component: HomeComponent,
         data: {
             meta: [{
                 name: 'test:first',

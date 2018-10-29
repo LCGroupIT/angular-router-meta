@@ -1,6 +1,6 @@
 {
     "name": "angular-router-meta",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "ngPackage": {
         "lib": {
             "entryFile": "src/index.ts"

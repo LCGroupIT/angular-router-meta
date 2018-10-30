@@ -6,9 +6,9 @@ Angular v4+ meta helper.
 This package is a powerful instrument in seo setting. -->
 
 
-- [Installation](##installation)
-- [Usage](##usage)
-- [Result](##result)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Result](#result)
 
 ## Installation
 

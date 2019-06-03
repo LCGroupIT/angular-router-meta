@@ -58,19 +58,19 @@
         "release": "npx np --contents=dist"
     },
     "peerDependencies": {
-        "@angular/common": ">=4.0.0 <8.0.0",
-        "@angular/core": ">=4.0.0 <8.0.0",
-        "rxjs": ">=5.5.10 <=7.0.0"
+        "@angular/common": ">=4.0.0 <9.0.0",
+        "@angular/core": ">=4.0.0 <9.0.0",
+        "rxjs": ">=6.4.0 <7.0.0"
     },
     "devDependencies": {
-        "@angular/cli": "^6.2.6",
-        "@angular/common": "6.1.0",
-        "@angular/compiler": "6.1.0",
-        "@angular/compiler-cli": "6.1.0",
-        "@angular/core": "6.1.0",
-        "@angular/platform-browser": "6.1.0",
-        "@angular/platform-browser-dynamic": "6.1.0",
-        "@angular/router": "^7.0.1",
+        "@angular/cli": "^8.0.1",
+        "@angular/common": "8.0.0",
+        "@angular/compiler": "8.0.0",
+        "@angular/compiler-cli": "8.0.0",
+        "@angular/core": "8.0.0",
+        "@angular/platform-browser": "8.0.0",
+        "@angular/platform-browser-dynamic": "8.0.0",
+        "@angular/router": "^8.0.0",
         "@types/chai": "^4.1.4",
         "@types/i18next": "^8.4.2",
         "@types/jasmine": "^2.8.8",
@@ -94,15 +94,16 @@
         "ng-packagr": "^4.2.0",
         "np": "^3.0.4",
         "rimraf": "^2.6.2",
-        "rxjs": "^6.3.3",
+        "rxjs": "^6.4.0",
         "sinon": "^6.1.4",
         "ts-helpers": "^1.1.2",
         "ts-loader": "^4.4.2",
         "tslint": "^5.11.0",
         "typedoc": "^0.11.1",
-        "typescript": ">=2.7.2 <2.8",
+        "typescript": ">=3.4 <3.5",
         "webpack": "4.16.3",
-        "zone.js": "^0.8.26"
+        "zone.js": "~0.9.1",
+        "tsickle": "^0.33.0"
     },
     "dependencies": {}
 }

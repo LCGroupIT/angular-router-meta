@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Meta, MetaDefinition } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
-
 import { filter, map, mergeMap } from 'rxjs/operators';
 
 const META_TAG_ATTRIBUTE = 'angular-router-meta';
@@ -29,8 +28,10 @@ export class RouterMetaService {
             .subscribe(
                 eventData => {
                     const metaList: MetaDefinition[] = eventData['meta'] || [];
-                    this.meta.removeTag(META_TAG_ATTRIBUTE);
+                    const oldMeta = document.querySelectorAll(`[${META_TAG_ATTRIBUTE}]`);
                     const tags = this.meta.addTags(metaList);
+
+                    Array.prototype.forEach.call(oldMeta, meta => this.meta.removeTagElement(meta));
                     tags.forEach(t => t.setAttribute(META_TAG_ATTRIBUTE, ''));
                 });
     }

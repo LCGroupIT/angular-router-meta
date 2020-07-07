@@ -1,5 +1,5 @@
 # angular-router-meta
-Angular v4+ meta helper.
+Angular v10+ meta helper.
 
 <!-- The package helps to manage meta tags more conveniently setting them directly in routes. The tags set in routes appear in the *head* tag right after the navigation is completed.
 

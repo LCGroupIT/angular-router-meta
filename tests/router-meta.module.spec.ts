@@ -3,13 +3,13 @@ import { async, inject, TestBed } from '@angular/core/testing';
 
 import { RouterMetaModule, RouterMetaService } from '../src';
 import { Router } from '@angular/router';
-import { Location } from "@angular/common";
-import { Meta } from "@angular/platform-browser";
+import { Location } from '@angular/common';
+import { Meta } from '@angular/platform-browser';
 import {
     routes,
     AppComponent,
     HomeComponent
-} from "./helpers";
+} from './helpers';
 
 describe('AppComponent', () => {
     let testBedService: RouterMetaService;
@@ -29,10 +29,10 @@ describe('AppComponent', () => {
             ],
             providers: []
         }).compileComponents();
-        testBedService = TestBed.get(RouterMetaService);
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
-        location = TestBed.get(Location);
+        testBedService = TestBed.inject(RouterMetaService);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
+        location = TestBed.inject(Location);
 
         fixture = TestBed.createComponent(AppComponent);
         meta.removeTag('angular-router-meta');
@@ -47,15 +47,15 @@ describe('AppComponent', () => {
     );
 
     it('navigate to "" redirects you to /home', async(() => {
-        router = TestBed.get(Router);
+        router = TestBed.inject(Router);
         router.navigate(['']).then(() => {
             expect(location.path()).toBe('/home');
         });
     }));
 
     it('should set meta tag', async(() => {
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
         router.navigate(['']).then(() => {
             expect(location.path()).toBe('/home');
             const tag = meta.getTag('name="render:status_code"');
@@ -66,8 +66,8 @@ describe('AppComponent', () => {
     }));
 
     it('should change content value', async(() => {
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
         router.navigate(['']);
         router.navigate(['changemeta']).then(() => {
             expect(location.path()).toBe('/changemeta');
@@ -80,8 +80,8 @@ describe('AppComponent', () => {
     }));
 
     it('should delete old tag and add new one', async(() => {
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
         router.navigate(['']);
         router.navigate(['replacemeta']).then(() => {
             expect(location.path()).toBe('/replacemeta');
@@ -95,8 +95,8 @@ describe('AppComponent', () => {
     }));
 
     it('should define several meta tags', async(() => {
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
         router.navigate(['']);
         router.navigate(['severalmeta']).then(() => {
             expect(location.path()).toBe('/severalmeta');
@@ -114,8 +114,8 @@ describe('AppComponent', () => {
     }));
 
     it('should delete meta tag', async(() => {
-        meta = TestBed.get(Meta);
-        router = TestBed.get(Router);
+        meta = TestBed.inject(Meta);
+        router = TestBed.inject(Router);
         router.navigate(['']);
         router.navigate(['severalmeta']);
         router.navigate(['nometa']).then(() => {

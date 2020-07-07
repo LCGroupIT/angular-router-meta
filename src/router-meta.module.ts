@@ -11,7 +11,7 @@ import { RouterMetaService } from './router-meta.service';
     providers: []
 })
 export class RouterMetaModule {
-    static forRoot(): ModuleWithProviders {
+    static forRoot(): ModuleWithProviders<RouterMetaModule> {
         return {
             ngModule: RouterMetaModule,
             providers: [
